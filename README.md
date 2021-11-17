@@ -1,6 +1,6 @@
 # <img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/images/logo.png" width="35"> Join Events- Events App In Flutter
  
- Social Network UI Made In Flutter for Android & iOS. 
+ Join Events- Events App In Flutter For iOS & Android
  
  Star⭐ the repo if you like what you see😉.
 
@@ -13,42 +13,29 @@ Dart and Flutter
 
 # Packages
 
+rxdart
+<a href="https://pub.dev/packages/rxdart">See on Pub.dev</a>
+
+auto_size_text
+<a href="https://pub.dev/packages/auto_size_text">See on Pub.dev</a>
+
 google_fonts
-<a href="https://pub.dev/packages/google_fonts">See on Pub.dev</a>
+<a href="https://pub.dev/packages/auto_size_text">See on Pub.dev</a>  
 
-http: ^0.12.0+4
+http: ^0.13.0
 <a href="https://pub.dev/packages/http">See on Pub.dev</a>
-
-story_view: ^0.12.5
-<a href="https://pub.dev/packages/story_view">See on Pub.dev</a>
-
-flutter_map: ^0.10.1+1
+  
+flutter_map: ^0.14.0
 <a href="https://pub.dev/packages/flutter_map">See on Pub.dev</a>
-
-timeline_tile: ^1.0.0
-<a href="https://pub.dev/packages/timeline_tile">See on Pub.dev</a>
 
 # Screenshots
 
-<h4>Home Screen</h4>
-<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/homewithstatus.png">
+<img src="https://github.com/stevie1mat/Join-Events/blob/main/screenss.png" width="500">
 
-<h4>Profile</h4>
-<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/profile.png" width="700">
 
-<h4>Meetup</h4>
-<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/meetup.png" width="700">
-
-<h4>Notifications & Connection</h4>
-<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/notificationandconnection.png" width="500">
-
-# Inspiration
-
-The UI is Inspired from the dribbble :
-<a href="https://dribbble.com/shots/14355537-Pappyon">Pappyon</a>
 
 # Author & Creator of this project
 
 <b>Steven Mathew</b>
  
-Designer @ phinstudio.com
+Designer @ siyonfresh.com
