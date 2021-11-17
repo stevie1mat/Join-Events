@@ -36,11 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   rxdart: ^0.26.0
   auto_size_text: ^3.0.0-nullsafety.0
-  circular_reveal_animation: ^2.0.0
-  animated_bottom_navigation_bar: ^0.3.2
+  
   google_fonts: ^2.1.0
   http: ^0.13.0
-  card_swiper: ^1.0.4
   flutter_map: ^0.14.0
   
 
