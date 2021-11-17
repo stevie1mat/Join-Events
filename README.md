@@ -1,16 +1,54 @@
-# join_events
+# <img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/images/logo.png" width="35"> Social Network UI Made In Flutter
+ 
+ Social Network UI Made In Flutter for Android & iOS. 
+ 
+ Star⭐ the repo if you like what you see😉.
 
-A new Flutter project.
+# <img src="https://cdn.freebiesupply.com/logos/large/2x/visual-studio-code-logo-png-transparent.png" width="25"> Requirements
+Any Operating System (ie. MacOS X, Linux, Windows)
 
-## Getting Started
+Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
 
-This project is a starting point for a Flutter application.
+Dart and Flutter
 
-A few resources to get you started if this is your first Flutter project:
+# Packages
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+google_fonts
+<a href="https://pub.dev/packages/google_fonts">See on Pub.dev</a>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+http: ^0.12.0+4
+<a href="https://pub.dev/packages/http">See on Pub.dev</a>
+
+story_view: ^0.12.5
+<a href="https://pub.dev/packages/story_view">See on Pub.dev</a>
+
+flutter_map: ^0.10.1+1
+<a href="https://pub.dev/packages/flutter_map">See on Pub.dev</a>
+
+timeline_tile: ^1.0.0
+<a href="https://pub.dev/packages/timeline_tile">See on Pub.dev</a>
+
+# Screenshots
+
+<h4>Home Screen</h4>
+<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/homewithstatus.png">
+
+<h4>Profile</h4>
+<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/profile.png" width="700">
+
+<h4>Meetup</h4>
+<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/meetup.png" width="700">
+
+<h4>Notifications & Connection</h4>
+<img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/notificationandconnection.png" width="500">
+
+# Inspiration
+
+The UI is Inspired from the dribbble :
+<a href="https://dribbble.com/shots/14355537-Pappyon">Pappyon</a>
+
+# Author & Creator of this project
+
+<b>Steven Mathew</b>
+ 
+Designer @ phinstudio.com
