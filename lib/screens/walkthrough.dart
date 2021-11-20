@@ -1,6 +1,7 @@
+import 'package:expandable_bottom_bar/expandable_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:join_events/screens/event_page.dart';
+import 'package:join_events/screens/events/event_page.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -250,7 +251,9 @@ class MyHomePage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => EventsPage()));
+                                    builder: (context) =>
+                                        DefaultBottomBarController(
+                                            child: EventsPage())));
                           },
                           child: Container(
                             height: 45.0,

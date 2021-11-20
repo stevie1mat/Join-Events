@@ -40,7 +40,11 @@ dependencies:
   google_fonts: ^2.1.0
   http: ^0.13.0
   flutter_map: ^0.14.0
-  
+  tiktoklikescroller: ^0.1.8
+  expandable_bottom_bar: ^2.0.2
+  video_player: ^2.2.7
+  story_view: ^0.13.1
+  google_maps_flutter: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +71,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/woman1.png
+    - images/man1.png
+    - images/logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

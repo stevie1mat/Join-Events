@@ -1,35 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:join_events/models/event_list_page.dart';
+import 'package:http/http.dart' as http;
+import 'large_event.dart';
 
-class LargeEvent extends StatefulWidget {
-  const LargeEvent({Key? key}) : super(key: key);
+class EventList extends StatelessWidget {
+  const EventList({Key? key}) : super(key: key);
 
-  @override
-  _LargeEventState createState() => _LargeEventState();
-}
-
-class _LargeEventState extends State<LargeEvent> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(0.0),
+    return SafeArea(
+      child: FutureBuilder<List<Event>>(
+        future: fetchEvents(http.Client()),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('An error has occurred!'),
+            );
+          } else if (snapshot.hasData) {
+            return EventListHorizotal(event: snapshot.data!);
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(
+                color: Colors.pinkAccent,
+              ),
+            );
+          }
+        },
+      ),
+    );
+  }
+}
+
+class EventListHorizotal extends StatelessWidget {
+  const EventListHorizotal({Key? key, required this.event}) : super(key: key);
+
+  final List<Event> event;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      scrollDirection: Axis.horizontal,
+      padding: const EdgeInsets.all(8),
+      itemCount: event.length,
+      itemBuilder: (context, index) {
+        return InkWell(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => LargeEvent(event: event[index])));
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
             child: Column(
               children: [
                 Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 320,
+                    width: 280.0,
+                    height: 270,
                     decoration: BoxDecoration(
-                      color: Colors.orange[400],
+                      color: event[index].color == 'pinkAccent'
+                          ? Colors.pinkAccent[400]
+                          : Colors.orangeAccent[400],
                       boxShadow: [
                         //background color of box
+
                         BoxShadow(
-                          color: Colors.orange.shade200,
+                          color: event[index].color == 'pinkAccent'
+                              ? Colors.pinkAccent.shade200
+                              : Colors.orangeAccent.shade200,
                           blurRadius: 4.0, // soften the shadow
                           spreadRadius: 1.0, //extend the shadow
                           offset: const Offset(
@@ -39,8 +78,8 @@ class _LargeEventState extends State<LargeEvent> {
                         )
                       ],
                       borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(0.0),
-                        topRight: Radius.circular(0.0),
+                        topLeft: Radius.circular(20.0),
+                        topRight: Radius.circular(20.0),
                         bottomRight: Radius.circular(0.0),
                         bottomLeft: Radius.circular(0.0),
                       ),
@@ -54,17 +93,26 @@ class _LargeEventState extends State<LargeEvent> {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 18.0, top: 48),
-                                      child: Icon(
-                                        Icons.arrow_back_ios_sharp,
-                                        color: Colors.white,
-                                      )),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 18.0, top: 18),
+                                  child: Text(
+                                    event[index].date,
+                                    style: GoogleFonts.comfortaa(
+                                        fontSize: 26,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 18.0),
+                                  child: Text(
+                                    event[index].month,
+                                    style: GoogleFonts.comfortaa(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
                                 ),
                               ],
                             ),
@@ -73,26 +121,10 @@ class _LargeEventState extends State<LargeEvent> {
                                   const EdgeInsets.only(bottom: 8.0, left: 10),
                               child: Row(
                                 children: [
-                                  Text(
-                                    'Best Event That Is\nEver Happening !',
-                                    style: GoogleFonts.cinzel(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                        color: Colors.white),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(bottom: 14.0, left: 10),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.location_on,
+                                  const Icon(Icons.location_on,
                                       color: Colors.white, size: 13),
                                   Text(
-                                    'New Delhi, India',
+                                    event[index].name,
                                     style: GoogleFonts.comfortaa(
                                         fontSize: 12, color: Colors.white),
                                     textAlign: TextAlign.center,
@@ -103,16 +135,22 @@ class _LargeEventState extends State<LargeEvent> {
                           ],
                         ),
                         Positioned(
-                            left: 200,
-                            child: Image.asset(
-                              'images/woman1.png',
-                              width: 220,
+                            left: 90,
+                            child: Image.network(
+                              event[index].url,
+                              width: 200,
                             ))
                       ],
                     )),
                 Container(
-                  width: MediaQuery.of(context).size.width,
+                  width: 279,
                   decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(0.0),
+                      topRight: Radius.circular(0.0),
+                      bottomRight: Radius.circular(8.0),
+                      bottomLeft: Radius.circular(8.0),
+                    ),
                     color: Colors.white,
                     boxShadow: [
                       //background color of box
@@ -207,106 +245,8 @@ class _LargeEventState extends State<LargeEvent> {
               ],
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding:
-                const EdgeInsets.only(top: 6, right: 8, left: 8, bottom: 2.0),
-            child: Container(
-              child: Text(
-                'Hi Steven! Do You want to join us? We need to clean the city and suburbs! Let\'s Join Delhio.',
-                style:
-                    GoogleFonts.comfortaa(fontSize: 15, color: Colors.black54),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(18.0),
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  //background color of box
-                  BoxShadow(
-                    color: Colors.grey.shade300,
-                    blurRadius: 10.0, // soften the shadow
-                    spreadRadius: 2.0, //extend the shadow
-                    offset: const Offset(
-                      0.0, // Move to right 10  horizontally
-                      0.0, // Move to bottom 10 Vertically
-                    ),
-                  )
-                ],
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(100.0),
-                  topRight: Radius.circular(100.0),
-                  bottomRight: Radius.circular(100.0),
-                  bottomLeft: Radius.circular(100.0),
-                ),
-              ),
-              height: 230,
-              width: MediaQuery.of(context).size.width,
-              child: FlutterMap(
-                options: MapOptions(
-                  center: LatLng(51.5, -0.09),
-                  zoom: 13.0,
-                ),
-                layers: [
-                  TileLayerOptions(
-                    urlTemplate:
-                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    subdomains: ['a', 'b', 'c'],
-                    attributionBuilder: (_) {
-                      return Text("© OpenStreetMap contributors");
-                    },
-                  ),
-                  MarkerLayerOptions(
-                    markers: [],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            height: 45.0,
-            width: 165.0,
-            decoration: BoxDecoration(
-              color: Colors.black87,
-              boxShadow: [
-                //background color of box
-                BoxShadow(
-                  color: Colors.grey.shade300,
-                  blurRadius: 10.0, // soften the shadow
-                  spreadRadius: 2.0, //extend the shadow
-                  offset: const Offset(
-                    0.0, // Move to right 10  horizontally
-                    0.0, // Move to bottom 10 Vertically
-                  ),
-                )
-              ],
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(5.0),
-                topRight: Radius.circular(5.0),
-                bottomRight: Radius.circular(5.0),
-                bottomLeft: Radius.circular(5.0),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 11.0),
-              child: Text(
-                'GET STARTED',
-                style: GoogleFonts.cinzel(fontSize: 17, color: Colors.white),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
