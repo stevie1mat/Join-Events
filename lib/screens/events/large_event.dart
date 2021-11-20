@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:join_events/models/event_list_page.dart';
 import 'package:join_events/screens/stories/smallstories.dart';
-import 'package:latlong2/latlong.dart';
 
 class LargeEvent extends StatefulWidget {
   final Event event;
