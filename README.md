@@ -1,4 +1,4 @@
-# <img src="https://github.com/stevie1mat/Social-Network-UI-Made-In-Flutter/blob/main/images/logo.png" width="35"> Join Events- Events App In Flutter
+# <img src="https://raw.githubusercontent.com/stevie1mat/Join-Events/main/images/logo.png" width="35"> Join Events- Events App In Flutter
  
  Join Events- Events App In Flutter For iOS & Android
  
@@ -22,15 +22,28 @@ auto_size_text
 google_fonts
 <a href="https://pub.dev/packages/auto_size_text">See on Pub.dev</a>  
 
-http: ^0.13.0
+http: 
 <a href="https://pub.dev/packages/http">See on Pub.dev</a>
   
-flutter_map: ^0.14.0
-<a href="https://pub.dev/packages/flutter_map">See on Pub.dev</a>
+tiktoklikescroller: 
+<a href="https://pub.dev/packages/tiktoklikescroller">See on Pub.dev</a>
+
+expandable_bottom_bar: 
+<a href="https://pub.dev/packages/expandable_bottom_bar">See on Pub.dev</a>
+
+video_player: 
+<a href="https://pub.dev/packages/video_player">See on Pub.dev</a>
+
+story_view:
+<a href="https://pub.dev/packages/story_view">See on Pub.dev</a>
+
+google_maps_flutter:
+<a href="https://pub.dev/packages/google_maps_flutter">See on Pub.dev</a>
 
 # Screenshots
 
-<img src="https://github.com/stevie1mat/Join-Events/blob/main/screenss.png" width="500">
+<h1>Eventio</h1>
+<img src="https://github.com/stevie1mat/Join-Events/blob/main/main.png" width="500">
 
 
 
