@@ -42,7 +42,7 @@ google_maps_flutter:
 
 # Screenshots
 
-<h1>Eventio</h1>
+<h3>Eventio</h3>
 <img src="https://github.com/stevie1mat/Join-Events/blob/main/main.png" width="500">
 
 
