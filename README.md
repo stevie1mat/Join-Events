@@ -45,6 +45,14 @@ google_maps_flutter:
 <h3>Eventio</h3>
 <img src="https://github.com/stevie1mat/Join-Events/blob/main/main.png" width="500">
 
+<h3>Event Page</h3>
+<img src="https://github.com/stevie1mat/Join-Events/blob/main/eventpage.png" width="500">
+
+<h3>Profile</h3>
+<img src="https://github.com/stevie1mat/Join-Events/blob/main/prof.png" width="500">
+
+<h3>Extras</h3>
+<img src="https://github.com/stevie1mat/Join-Events/blob/main/extras.png" width="500">
 
 
 # Author & Creator of this project
