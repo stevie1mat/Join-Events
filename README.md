@@ -13,12 +13,6 @@ Dart and Flutter
 
 # Packages
 
-rxdart
-<a href="https://pub.dev/packages/rxdart">See on Pub.dev</a>
-
-auto_size_text
-<a href="https://pub.dev/packages/auto_size_text">See on Pub.dev</a>
-
 google_fonts
 <a href="https://pub.dev/packages/auto_size_text">See on Pub.dev</a>  
 
