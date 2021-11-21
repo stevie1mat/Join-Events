@@ -56,4 +56,4 @@ google_maps_flutter:
 Designer @ siyonfresh.com
 
 # Buy Me A Coffee
-<a href="https://rzp.io/l/jlOOFVXJ"><img src="https://dashboard.razorpay.com/img/logo_full.png" width="200"></a>
+<a href="https://rzp.io/l/jlOOFVXJ"><img src="https://s3.ap-southeast-1.amazonaws.com/images.deccanchronicle.com/dc-Cover-u0b349upqugfio195s4lpk8144-20190213120303.Medi.jpeg" width="200"></a>
