@@ -56,4 +56,4 @@ google_maps_flutter:
 Designer @ siyonfresh.com
 
 # Buy Me A Coffee
-<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_IOLWRtkgVRYhLy" async> </script> </form>
+<a href="https://rzp.io/l/jlOOFVXJ"><img src="https://dashboard.razorpay.com/img/logo_full.png" width="200"></a>
